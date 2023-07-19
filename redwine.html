@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wine Quality Classification using Self-Organizing Maps (SOM) </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+  <style>
+    .image {
+        max-width: 100%;
+        width: 600px; /* Adjust this value as per your requirement */
+        height: auto;
+    }
+
+    @media (max-width: 600px) { /* Adjust the max-width as per your requirements */
+    .navbar-brand img {
+      width: 340px;
+      height:60px
+    }
+  }
+
+   @media (max-width: 480px) { /* Adjust the max-width as needed */
+    video {
+      width: 320px; /* Set the width to 100% for smaller screens */
+      height: 170px; /* Allow the height to adjust proportionally */
+    }
+  }
+
+   .navbar{
+    --bs-navbar-padding-x: 0px!important;
+    --bs-navbar-padding-y: 0px!important;
+}
+</style>
+  <body>
+
+    <nav class="navbar bg-body-tertiary" >
+  <div class="container-fluid" style ="background-color :#023047; color:white; padding:20px">
+    <a class="navbar-brand" href="newindex.html">
+      <img src="logo20.png" alt="Logo" width="490" height="90" class="d-inline-block align-text-top" >
+      
+    </a>
+  </div>
+</nav>
+
+    <section class = "container" style ="margin-top: 20px;" >
+        <h2 style ="margin-bottom: 20px;"> Wine Quality Classification using Self-Organizing Maps (SOM) </h2>
+        <hr >
+        <h3 > Introduction </h3>
+        <p>
+<div style ="margin-bottom: 10px;">
+This project aims to classify the quality of wines using Self-Organizing Maps (SOM), an unsupervised machine learning algorithm. The dataset used for this analysis is the "Red Wine Quality" dataset sourced from the UCI Machine Learning Repository. The dataset contains various physicochemical properties of red wines, along with their quality ratings provided by experts. <br>
+
+<h3 style = "margin-top: 10px;"> Importance </h3>
+Wine quality classification is essential for both wine producers and consumers. Accurately assessing wine quality based on its physicochemical attributes is crucial for production optimization, quality control, and informed consumer choices. Self-Organizing Maps offer an effective method for visualizing and clustering complex data, making them suitable for wine quality classification.
+</div>
+
+
+
+
+      
+
+<h3 style ="margin-top: 20px;"> Data Description</h3>
+<div style ="margin-bottom: 10px;">
+The "Red Wine Quality" dataset consists of 1,599 instances of red wines, each described by 11 physicochemical attributes. These attributes include fixed acidity, volatile acidity, citric acid, residual sugar, chlorides, free sulfur dioxide, total sulfur dioxide, density, pH, sulphates, and alcohol content. The quality rating ranges from 0 to 10, representing wine quality on a discrete scale.
+<ol>
+<li>Fixed acidity</li>
+<li>Volatile acidity</li>
+<li>Citric acid</li>
+<li>Residual sugar</li>
+<li>Chlorides</li>
+<li>Free sulfur dioxide</li>
+<li>Total sulfur dioxide</li>
+<li>Density</li>
+<li>pH</li>
+<li>Sulphates</li>
+<li>Alcohol</li>
+<li>Quality (score between 0 and 10)</li>
+</ol>
+</div>
+
+<h3 style ="margin-top: 20px;"> Project Steps </h3>
+<div style ="margin-bottom: 10px;">
+
+<ul>
+<li><strong>Data Preprocessing:</strong> Explore and preprocess the dataset by handling missing values, scaling the features, and ensuring data quality.</li>
+<li><strong>Self-Organizing Maps:</strong> Train a SOM model using the input features from the dataset. SOMs utilize unsupervised learning to create a low-dimensional grid that represents the underlying data structure.</li>
+<li><strong>SOM Visualization:</strong> Visualize the SOM by mapping the input data onto the grid. This visualization provides insights into the clusters and relationships within the data.</li>
+<li><strong>Quality Classification:</strong> Assign wine quality labels to the SOM clusters based on the corresponding quality ratings from the dataset.</li>
+<li><strong>Model Evaluation:</strong> Evaluate the performance of the SOM-based wine quality classification by analyzing the accuracy and other relevant metrics.</li>
+<li><strong>Interpretation:</strong> Interpret the SOM clusters to gain insights into the relationships between the physicochemical attributes and wine quality. Identify key features contributing to high-quality wines.</li>
+</ul>
+</div>
+
+    </section>
+
+    <div class = "container">
+     <h3 style ="margin-top: 20px;"> Features Correlation </h3>
+   
+    <img src="redwine2.png" style="max-width: 100%">
+     <div style ="margin-bottom: 10px;">
+    Analyzing the correlations, we can observe the following insights:<br>
+   The expected outcome of this project is a wine quality classification model based on Self-Organizing Maps. This model will classify wines into different quality categories based on their physicochemical attributes. Additionally, the SOM visualization will provide a visual representation of the clusters and relationships within the dataset, aiding in the interpretation of wine quality patterns.
+    
+    </div>
+
+
+
+    </div>
+
+<div class="container">
+         <h3 style ="margin-top: 20px; margin-top: 10px;">Orginal Dataset Statistics</h3>
+
+    <img src="redwine4.png" style="max-width: 100%; margin-top: 10px;">
+
+    <h3 style ="margin-top: 20px; margin-top: 10px;">An Analysis of Physicochemical Features of Not Quality Wine in the (1,6) Location on the Self-Organizing Map</h3>
+
+    <img src="redwine5.png" style="max-width: 100%; margin-top: 10px;">
+
+
+
+
+    <div style ="margin-bottom: 10px;">
+The analysis of the physicochemical features of not quality wine samples at the (1,6) location on the Self-Organizing Map reveals several notable differences compared to the original dataset. These differences suggest that specific attributes play a significant role in determining the quality of wine. The not quality wine samples at the (1,6) location exhibit higher levels of fixed acidity, citric acid, residual sugar, and chlorides, while having lower levels of volatile acidity and alcohol. These findings indicate that higher levels of certain components, such as citric acid and residual sugar, and lower levels of volatile acidity and alcohol, may contribute to wines being classified as not of high quality. This analysis highlights the importance of understanding the impact of individual physicochemical attributes on wine quality and provides valuable insights for further investigation and improvement in winemaking processes.
+</div>
+
+</div>
+
+
+
+<section class = "container">
+
+
+
+
+<section class ="container" style ="background-color: antiquewhite; padding:10px; margin-bottom: 20px;">
+<div> 
+    <h5 style ="padding-top: 10px;"><b style ="border-bottom: 2px solid black;"> Conclusions </b></h5>
+<div style ="margin-bottom: 10px;">
+By leveraging Self-Organizing Maps, this project will contribute to the wine industry by providing a data-driven approach to wine quality classification. The SOM-based model can assist wine producers in quality control processes, enabling them to optimize production and maintain consistent quality standards. Additionally, consumers can benefit from the model by making more informed decisions when selecting wines based on predicted quality.
+</div>
+
+
+
+
+</section>
+
+
+
+</section>
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div >
+
+  <footer class=" text-center text-lg-start text-white" style ="background-color: #023047;">
+    <!-- Grid container -->
+    
+   <div class = "d-flex justify-content-end" style ="padding:10px">
+   <a href ="newindex.html"><button class="btn btn-lg " style="background-color: #023047; color:antiquewhite">
+      Go Back to Mainpage
+    </button></a>
+
+</div>
+    
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      Tien Truong | Behavior Research | Machine Learning and Deep Learning
+      
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>

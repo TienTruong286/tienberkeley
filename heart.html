@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Developing a Logistic Regression Model for Heart Disease Prediction: An Analytical Study</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+  <style>
+    .image {
+        max-width: 100%;
+        width: 600px; /* Adjust this value as per your requirement */
+        height: auto;
+    }
+
+    @media (max-width: 600px) { /* Adjust the max-width as per your requirements */
+    .navbar-brand img {
+      width: 340px;
+      height:60px
+    }
+  }
+
+   @media (max-width: 480px) { /* Adjust the max-width as needed */
+    video {
+      width: 320px; /* Set the width to 100% for smaller screens */
+      height: 170px; /* Allow the height to adjust proportionally */
+    }
+  }
+
+   .navbar{
+    --bs-navbar-padding-x: 0px!important;
+    --bs-navbar-padding-y: 0px!important;
+}
+</style>
+  <body>
+
+    <nav class="navbar bg-body-tertiary" >
+  <div class="container-fluid" style ="background-color :#023047; color:white; padding:20px">
+    <a class="navbar-brand" href="newindex.html">
+      <img src="logo20.png" alt="Logo" width="490" height="90" class="d-inline-block align-text-top" >
+      
+    </a>
+  </div>
+</nav>
+
+    <section class = "container" style ="margin-top: 20px;" >
+        <h2 style ="margin-bottom: 20px;">Developing a Logistic Regression Model for Heart Disease Prediction: An Analytical Study </h2>
+        <hr >
+        <h3 > Introduction </h3>
+        <p>
+<div style ="margin-bottom: 10px;">
+The heart disease prediction project aims to develop a machine learning model capable of accurately predicting the presence or absence of heart disease in patients. Heart disease is a prevalent and potentially life-threatening condition, making early detection and intervention crucial for effective treatment and prevention. <br>
+Through the application of machine learning algorithms and data analysis techniques, the project aims to uncover patterns, relationships, and risk factors associated with heart disease. The developed model will learn from historical patient data, capturing complex interactions between the input features and the target variable to make accurate predictions on new, unseen patient data. By providing reliable predictions, the model can potentially support healthcare providers in identifying individuals at higher risk of heart disease, enabling early intervention, personalized treatment plans, and improved patient outcomes.<br>
+</div>
+
+
+
+
+      
+
+<h3 style ="margin-top: 20px;"> Data Description</h3>
+<div style ="margin-bottom: 10px;">
+The heart disease prediction dataset used in this project contains information related to various attributes of patients. Each row in the dataset represents a unique patient, and the columns correspond to different features and the target variable.
+
+The features present in the dataset are as follows:
+
+<ul>
+  <li><strong>Age:</strong> The age of the patient in years (numerical).</li>
+  <li><strong>Sex:</strong> The sex of the patient (0: female, 1: male) (categorical).</li>
+  <li><strong>CP (Chest Pain Type):</strong> The type of chest pain experienced by the patient (categorical).</li>
+    <ul>
+      <li>0: Typical angina</li>
+      <li>1: Atypical angina</li>
+      <li>2: Non-anginal pain</li>
+      <li>3: Asymptomatic</li>
+    </ul>
+  <li><strong>Trestbps:</strong> The resting blood pressure of the patient in mm Hg (numerical).</li>
+  <li><strong>Chol:</strong> The cholesterol level of the patient in mg/dl (numerical).</li>
+  <li><strong>FBS (Fasting Blood Sugar):</strong> The fasting blood sugar level of the patient (> 120 mg/dl: 1, <= 120 mg/dl: 0) (categorical).</li>
+  <li><strong>Restecg (Resting Electrocardiographic Results):</strong> The resting electrocardiographic results of the patient (categorical).</li>
+    <ul>
+      <li>0: Normal</li>
+      <li>1: Abnormal ST-T wave</li>
+      <li>2: Showing probable or definite left ventricular hypertrophy</li>
+    </ul>
+  <li><strong>Thalach:</strong> The maximum heart rate achieved by the patient (numerical).</li>
+  <li><strong>Exang (Exercise-Induced Angina):</strong> Whether the patient experienced exercise-induced angina (0: No, 1: Yes) (categorical).</li>
+  <li><strong>Oldpeak:</strong> ST depression induced by exercise relative to rest (numerical).</li>
+  <li><strong>Slope:</strong> The slope of the peak exercise ST segment (categorical).</li>
+    <ul>
+      <li>0: Upsloping</li>
+      <li>1: Flat</li>
+      <li>2: Downsloping</li>
+    </ul>
+  <li><strong>CA (Number of Major Vessels):</strong> The number of major vessels colored by fluoroscopy (0-3) (numerical).</li>
+  <li><strong>Thal:</strong> Thalassemia type (categorical).</li>
+    <ul>
+      <li>0: Normal</li>
+      <li>1: Fixed defect</li>
+      <li>2: Reversible defect</li>
+    </ul>
+  <li><strong>Target:</strong> Indicates the presence (1) or absence (0) of heart disease.</li>
+</ul>
+</div>
+
+<h3 style ="margin-top: 20px;"> Project Steps </h3>
+<div style ="margin-bottom: 10px;">
+
+<ol>
+  <li><strong>Data Collection:</strong> Gather the heart disease dataset containing various patient attributes, such as age, sex, blood pressure, cholesterol levels, and more. Ensure that the dataset is representative and accurately labeled.</li>
+  <li><strong>Exploratory Data Analysis (EDA):</strong> Perform an in-depth analysis of the dataset to gain insights into its structure, identify missing values or outliers, and understand the relationships between features and the target variable. Visualize the data using plots, histograms, box plots, and correlation matrices to uncover patterns and dependencies.</li>
+  <li><strong>Data Preprocessing:</strong> Clean and preprocess the dataset to handle missing values, outliers, and categorical variables. Perform necessary transformations, such as normalization or scaling, to ensure that all features are on a similar scale. Split the data into training and testing sets for model evaluation.</li>
+  <li><strong>Feature Selection and Engineering:</strong> Analyze the relevance and importance of each feature in predicting heart disease. Use techniques like correlation analysis, feature importance scores, or domain knowledge to select the most influential features. Consider feature engineering to create new features or transform existing ones to capture additional information.</li>
+  <li><strong>Model Selection:</strong> Choose an appropriate machine learning algorithm for heart disease prediction. Logistic regression, decision trees, random forests, or support vector machines are common choices. Consider the characteristics of the dataset and the interpretability and performance requirements of the model.</li>
+  <li><strong>Model Training:</strong> Train the selected model using the preprocessed data. Adjust the model's hyperparameters using techniques like cross-validation or grid search to optimize its performance. Utilize appropriate evaluation metrics such as accuracy, precision, recall, and F1-score to assess the model's performance during training.</li>
+  <li><strong>Model Evaluation:</strong> Evaluate the trained model using the reserved testing data. Analyze the model's performance metrics and compare them to the desired objectives. Identify any limitations or areas for improvement.</li>
+  <li><strong>Model Interpretation:</strong> Interpret the trained model to understand the factors contributing to heart disease prediction. Analyze the coefficients or feature importance scores to identify the most influential features. Explain how each feature affects the likelihood of heart disease.</li>
+</ol>
+
+</div>
+
+    </section>
+
+ <div class = "container">
+     <h3 style ="margin-top: 20px;"> Correlation Features</h3>
+   
+    <img src="heart2.png" style="max-width: 100%">
+     <div style ="margin-bottom: 10px;">
+
+  
+  <p>The correlation matrix provides insights into the relationships between different features and the target variable (heart disease). Here is a summary of the observations:</p>
+<ul>
+  <li>Age (age) has a weak negative correlation (-0.225) with the target variable. As age increases, the likelihood of heart disease tends to decrease slightly.</li>
+  <li>Sex (sex) has a moderate negative correlation (-0.281) with the target variable. Being male is associated with a slightly higher probability of heart disease.</li>
+  <li>Chest pain type (cp) shows a moderate positive correlation (0.434) with the target variable. Higher chest pain type values are indicative of a higher probability of heart disease.</li>
+  <li>Resting blood pressure (trestbps), cholesterol levels (chol), and fasting blood sugar (fbs) have weak correlations with the target variable. They do not appear to have a significant impact on heart disease prediction.</li>
+  <li>Resting electrocardiographic results (restecg) and exercise-induced angina (exang) have weak to moderate correlations with the target variable. They contribute to the prediction of heart disease but to a lesser extent compared to other features.</li>
+</ul>
+    </div>
+
+
+
+    </div>
+
+
+
+
+
+    <div class = "container">
+     <h3 style ="margin-top: 20px;"> Classification Report</h3>
+   
+    <img src="heart1.png" style="max-width: 100%">
+     <div style ="margin-bottom: 10px;">
+
+  
+  <p>Analyzing the performance metrics for the classification model, I observe the following:</p>
+<p><strong>Precision:</strong> The precision score for class 0 (0.83) indicates that 83% of the samples predicted as class 0 are indeed correct, while for class 1 (0.83), 83% of the samples predicted as class 1 are correct. This indicates a balanced precision for both classes.</p>
+<p><strong>Recall:</strong> The recall score for class 0 (0.81) suggests that 81% of the actual class 0 samples were correctly identified, while for class 1 (0.85), 85% of the actual class 1 samples were correctly identified. The model has relatively high recall for both classes, indicating that it effectively captures the majority of the positive samples.</p>
+<p><strong>F1-Score:</strong> The F1-score combines precision and recall into a single metric. With an F1-score of 0.82 for class 0 and 0.84 for class 1, I can conclude that the model performs well in terms of balancing precision and recall for both classes.</p>
+<p><strong>Accuracy:</strong> The overall accuracy of the model is 83%, indicating that 83% of the predictions are correct. This metric considers both true positives and true negatives.</p>
+<p>In summary, the model demonstrates a balanced performance in terms of precision, recall, and F1-score for both classes. The accuracy score indicates a good overall predictive capability. However, further analysis, including a comparison with domain-specific requirements or performance on a larger dataset, would provide a more comprehensive assessment of the model's effectiveness in heart disease prediction.</p>
+    
+    </div>
+
+
+
+    </div>
+
+
+
+
+<section class = "container">
+
+
+
+
+<section class ="container" style ="background-color: antiquewhite; padding:10px; margin-bottom: 20px;">
+<div> 
+    <h5 style ="padding-top: 10px;"><b style ="border-bottom: 2px solid black;"> Conclusions </b></h5>
+<div style ="margin-bottom: 10px;">
+In conclusion, this project aimed to develop a machine learning model for heart disease prediction based on patient attributes. The dataset was analyzed, preprocessed, and used to train and evaluate the model.<br>
+
+The project successfully demonstrated the effectiveness of the developed model in predicting heart disease. The model achieved balanced performance with high precision, recall, and F1-score for both classes. The overall accuracy of 83% indicated the model's ability to make accurate predictions.<br>
+
+The insights gained from the project can be valuable in the field of healthcare, assisting medical professionals in early detection and diagnosis of heart disease. By utilizing machine learning algorithms, it becomes possible to leverage patient attributes and make informed predictions, potentially leading to improved patient outcomes and better allocation of healthcare resources.<br>
+</div>
+
+
+
+
+</section>
+
+
+
+</section>
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div >
+
+  <footer class=" text-center text-lg-start text-white" style ="background-color: #023047;">
+    <!-- Grid container -->
+    
+   <div class = "d-flex justify-content-end" style ="padding:10px">
+   <a href ="newindex.html"><button class="btn btn-lg " style="background-color: #023047; color:antiquewhite">
+      Go Back to Mainpage
+    </button></a>
+
+</div>
+    
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      Tien Truong | Behavior Research | Machine Learning and Deep Learning
+      
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>

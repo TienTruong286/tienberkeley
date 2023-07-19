@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spam and Ham Message Filtering using Recurrent Neural Networks (RNN)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+  <style>
+    .image {
+        max-width: 100%;
+        width: 600px; /* Adjust this value as per your requirement */
+        height: auto;
+    }
+
+    @media (max-width: 600px) { /* Adjust the max-width as per your requirements */
+    .navbar-brand img {
+      width: 340px;
+      height:60px
+    }
+  }
+
+   @media (max-width: 480px) { /* Adjust the max-width as needed */
+    video {
+      width: 320px; /* Set the width to 100% for smaller screens */
+      height: 180px; /* Allow the height to adjust proportionally */
+    }
+  }
+
+   .navbar{
+    --bs-navbar-padding-x: 0px!important;
+    --bs-navbar-padding-y: 0px!important;
+}
+</style>
+  <body>
+
+    <nav class="navbar bg-body-tertiary" >
+  <div class="container-fluid" style ="background-color :#023047; color:white; padding:20px">
+    <a class="navbar-brand" href="newindex.html">
+      <img src="logo20.png" alt="Logo" width="490" height="90" class="d-inline-block align-text-top" >
+      
+    </a>
+  </div>
+</nav>
+
+    <section class = "container" style ="margin-top: 20px;" >
+        <h2 style ="margin-bottom: 20px;"> Spam and Ham Message Filtering using Recurrent Neural Networks (RNN) </h2>
+        <hr >
+        <h3 > Introduction </h3>
+        <p>
+<div style ="margin-bottom: 10px;">
+The Spam and Ham Filtering project aims to develop a machine learning model that can accurately classify incoming messages as either "spam" or "ham" (non-spam). By utilizing the Multinomial Naive Bayes algorithm and text processing techniques, this project focuses on creating an efficient and effective system for filtering unwanted and potentially harmful messages. <br>
+</div>
+
+
+
+
+      
+
+<h3 style ="margin-top: 20px;"> Data Description</h3>
+<div style ="margin-bottom: 10px;">
+A spam and ham email dataset is a collection of emails that are categorized into two main groups: spam and ham.
+
+<ul>
+<li><b>Spam Emails:</b> These are unsolicited, unwanted emails that are typically sent in bulk to a large number of recipients. They often contain advertisements, promotional offers, or fraudulent content. Spam emails are usually sent with the intention of deceiving or tricking recipients into taking certain actions, such as purchasing a product, revealing personal information, or clicking on malicious links.</li>
+
+<li><b>Ham Emails:</b> These are legitimate, non-spam emails that are desired or expected by the recipients. Ham emails can include personal or professional correspondence, newsletters, transactional emails, or any other legitimate communication that users have opted to receive.</li>
+</ul>
+</div>
+
+<h3 style ="margin-top: 20px;"> Project Steps </h3>
+<div style ="margin-bottom: 10px;">
+
+  <ol>
+    <li><strong>Data Collection:</strong> Gather a dataset containing labeled examples of spam and ham messages.</li>
+    <li><strong>Data Preprocessing:</strong> Clean and preprocess the text data by removing unnecessary characters, converting text to lowercase, and splitting the dataset into training and testing sets.</li>
+    <li><strong>Tokenization:</strong> Tokenize the text data by splitting it into individual words or tokens.</li>
+    <li><strong>Encoding:</strong> Encode the tokenized words into numerical representations using a word index mapping.</li>
+    <li><strong>Padding:</strong> Pad or truncate the sequences of words to ensure a consistent length.</li>
+    <li><strong>Model Architecture:</strong> Build the RNN model for spam and ham classification using layers such as Embedding, LSTM, and Dense.</li>
+    <li><strong>Compile the Model:</strong> Specify the loss function, optimizer, and evaluation metrics for the model.</li>
+    <li><strong>Model Training:</strong> Train the RNN model on the training data with specified epochs and batch size.</li>
+    <li><strong>Model Evaluation:</strong> Evaluate the trained model on the testing set using metrics like accuracy, precision, recall, and F1-score.</li>
+    <li><strong>Hyperparameter Tuning:</strong> Fine-tune the hyperparameters of the model for optimal performance.</li>
+    <li><strong>Deployment and Testing:</strong> Deploy the model in a production environment and test it on real-world data.</li>
+  </ol>
+</div>
+
+    </section>
+
+<div class="container">
+    <img src="spam21.png" style="max-width: 100%">
+    <div style ="margin-bottom: 10px;">
+The classification report highlights the strengths of the model's performance in classifying ham messages. With a precision of 100% for Class 0 (ham), the model shows a remarkable ability to correctly identify and classify ham messages with minimal false positives. This high precision indicates the model's reliability in distinguishing genuine messages from spam. Additionally, the weighted average F1-score of 0.93 reflects the overall effectiveness of the model in achieving a balance between precision and recall for ham messages. The high accuracy of 87% further reinforces the model's capability to accurately classify the majority of ham messages in the dataset.
+</div>
+
+</div>
+
+<section class = "container">
+
+
+
+
+<section class ="container" style ="background-color: antiquewhite; padding:10px; margin-bottom: 20px;">
+<div> 
+    <h5 style ="padding-top: 10px;"><b style ="border-bottom: 2px solid black;"> Conclusions </b></h5>
+<div style ="margin-bottom: 10px;">
+IIn conclusion, the spam and ham filtering project utilizing RNN (Recurrent Neural Network) has demonstrated promising results. The model showed strong performance in accurately classifying ham messages, achieving high precision and a weighted average F1-score of 0.93. The high accuracy rate of 87% further supports the model's effectiveness.<br>
+
+The successful implementation of this project has significant implications for various communication systems, particularly in the context of email filtering and message categorization. By accurately distinguishing between legitimate ham messages and spam, the model contributes to enhancing communication management, ensuring important messages are appropriately prioritized and reducing the risk of false positives.<br>
+
+Overall, this project showcases the potential of RNN-based approaches for spam and ham filtering tasks. With further refinement and expansion, such models have the potential to contribute to more effective and efficient communication systems, improving user experience and reducing the impact of unsolicited messages.<br>
+
+</div>
+
+
+
+
+</section>
+
+
+
+</section>
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div >
+
+  <footer class=" text-center text-lg-start text-white" style ="background-color: #023047;">
+    <!-- Grid container -->
+
+   <div class = "d-flex justify-content-end" style ="padding:10px">
+   <a href ="newindex.html"><button class="btn btn-lg " style="background-color: #023047; color:antiquewhite">
+      Go Back to Mainpage
+    </button></a>
+
+</div>
+    
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      TTien Truong | Behavior Research | Machine Learning and Deep Learning
+      
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>

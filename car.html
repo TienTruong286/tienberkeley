@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Car Price Prediction using Linear Regression and Lasso </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+  <style>
+    .image {
+        max-width: 100%;
+        width: 600px; /* Adjust this value as per your requirement */
+        height: auto;
+    }
+
+    @media (max-width: 600px) { /* Adjust the max-width as per your requirements */
+    .navbar-brand img {
+      width: 340px;
+      height:60px
+    }
+  }
+
+   @media (max-width: 480px) { /* Adjust the max-width as needed */
+    video {
+      width: 320px; /* Set the width to 100% for smaller screens */
+      height: 170px; /* Allow the height to adjust proportionally */
+    }
+  }
+
+   .navbar{
+    --bs-navbar-padding-x: 0px!important;
+    --bs-navbar-padding-y: 0px!important;
+}
+</style>
+  <body>
+
+    <nav class="navbar bg-body-tertiary" >
+  <div class="container-fluid" style ="background-color :#023047; color:white; padding:20px">
+    <a class="navbar-brand" href="newindex.html">
+      <img src="logo20.png" alt="Logo" width="490" height="90" class="d-inline-block align-text-top" >
+      
+    </a>
+  </div>
+</nav>
+
+    <section class = "container" style ="margin-top: 20px;" >
+        <h2 style ="margin-bottom: 20px;"> Car Price Prediction using Linear Regression and Lasso </h2>
+        <hr >
+        <h3 > Introduction </h3>
+        <p>
+<div style ="margin-bottom: 10px;">
+The Car Price Prediction project aims to develop a machine learning model that can accurately predict the price of cars based on various features and attributes. By utilizing the power of Linear Regression and Lasso regularization techniques, this project focuses on creating a reliable system for estimating car prices and assisting buyers and sellers in making informed decisions. <br>
+</div>
+
+
+
+
+      
+
+<h3 style ="margin-top: 20px;"> Data Description</h3>
+<div style ="margin-bottom: 10px;">
+The dataset you provided is the "Vehicle Dataset from CarDekho" available on Kaggle. This dataset contains information about used cars listed on the CarDekho platform. Here is a description of the columns in the dataset:
+
+
+<ul>
+<li>Car_Name: The name or model of the car.</li>
+<li>Year: The year in which the car was manufactured.</li>
+<li>Selling_Price: The selling price of the car (in lakhs).</li>
+<li>Present_Price: The current showroom price of the car (in lakhs).</li>
+<li>Kms_Driven: The distance traveled by the car in kilometers.</li>
+<li>Fuel_Type: The type of fuel used by the car (Petrol, Diesel, or CNG).</li>
+<li>Seller_Type: The type of seller (Individual or Dealer).</li>
+<li>Transmission: The transmission type of the car (Manual or Automatic).</li>
+<li>Owner: The number of previous owners of the car.</li>
+<li>Mileage: The mileage offered by the car (in kilometers per liter).</li>
+<li>Engine: The engine capacity of the car (in CC).</li>
+<li>Power: The power of the car (in bhp).</li>
+<li>Seats: The number of seats in the car.</li>
+</ul>
+</div>
+
+<h3 style ="margin-top: 20px;"> Project Steps </h3>
+<div style ="margin-bottom: 10px;">
+
+<ol>
+<li><strong>Data Collection:</strong> Gather a comprehensive dataset containing information about various cars, including features such as make, model, year, mileage, fuel type, transmission, and more.</li>
+<li><strong>Exploratory Data Analysis (EDA):</strong> Perform data exploration and visualization to understand the distribution, relationships, and characteristics of the variables. Analyze numerical variables using histograms, scatter plots, and correlation matrices. Explore categorical variables using bar plots and frequency distributions.</li>
+<li><strong>Data Preprocessing:</strong> Handle missing values by either imputing them or removing the corresponding records, depending on the dataset and specific requirements. Convert categorical variables into numerical representations using techniques such as one-hot encoding or label encoding.</li>
+<li><strong>Split the dataset</strong> into features (X) and the target variable (y) to prepare for model training.</li>
+<li><strong>Feature Selection and Engineering:</strong> Perform feature selection to identify the most relevant variables for predicting car prices. Consider feature engineering techniques, such as creating new features based on domain knowledge or feature interactions, to enhance the predictive power of the model.</li>
+<li><strong>Model Training:</strong> Split the preprocessed data into training and testing sets. Train a Linear Regression model on the training data to learn the relationships between the features and car prices. Train a Lasso Regression model, which incorporates L1 regularization, to improve the model's performance and handle potential overfitting.</li>
+<li><strong>Model Evaluation:</strong> Evaluate the trained models using appropriate evaluation metrics, such as mean squared error (MSE), root mean squared error (RMSE), or R-squared. Compare the performance of the Linear Regression and Lasso models to assess their effectiveness in predicting car prices.</li>
+<li><strong>Predicting Car Prices:</strong> Utilize the trained models to predict car prices for new, unseen data. Assess the accuracy and reliability of the price predictions.</li>
+</ol>
+</div>
+
+    </section>
+
+<div class="container">
+    <img src="car1.png" style="max-width: 100%">
+    <div style ="margin-bottom: 10px;">
+For the linear regression model, the mean absolute error (MAE) is calculated as 1.0726. This means that, on average, the predicted car prices deviate from the actual prices by approximately 1.0726 lakhs. The MAE measures the average absolute difference between the predicted and actual values, without considering the direction of the errors.<br>
+
+The root mean squared error (RMSE) is computed as 1.3110. This metric represents the square root of the average of the squared differences between the predicted and actual values. The RMSE provides a measure of the typical magnitude of the errors made by the model. In this case, the RMSE indicates that the predicted car prices, on average, deviate by approximately 1.3110 lakhs from the actual prices.<br>
+
+Both the MAE and RMSE are used to assess the accuracy and precision of the linear regression model's predictions. A lower MAE and RMSE indicate better performance, as they imply smaller differences between the predicted and actual values. However, the interpretation of these metrics depends on the specific context and the scale of the target variable.<br>
+</div>
+
+</div>
+
+<div class="container">
+    <img src="car2.png" style="max-width: 100%">
+    <div style ="margin-bottom: 10px;">
+For the Lasso regression model, the mean absolute error (MAE) is calculated as 1.0507. This means that, on average, the predicted car prices deviate from the actual prices by approximately 1.0507 lakhs. The MAE measures the average absolute difference between the predicted and actual values.<br>
+
+The root mean squared error (RMSE) is computed as 1.3032. This metric represents the square root of the average of the squared differences between the predicted and actual values. The RMSE provides a measure of the typical magnitude of the errors made by the model.<br>
+
+Comparing the MAE and RMSE for the linear regression model and the Lasso regression model, we can see that the Lasso model performs slightly better in terms of both metrics. The Lasso model has a lower MAE and RMSE compared to the linear regression model, indicating that it makes more accurate predictions with smaller deviations from the actual prices.<br>
+
+These metrics provide an assessment of the performance of the Lasso regression model in predicting car prices. A lower MAE and RMSE signify better accuracy and precision in the model's predictions. However, it is important to consider the context and scale of the target variable when interpreting these metrics.<br>
+
+
+</div>
+
+</div>
+
+<section class = "container">
+
+
+
+
+<section class ="container" style ="background-color: antiquewhite; padding:10px; margin-bottom: 20px;">
+<div> 
+    <h5 style ="padding-top: 10px;"><b style ="border-bottom: 2px solid black;"> Conclusions </b></h5>
+<div style ="margin-bottom: 10px;">
+In conclusion, I applied two regression models, Linear Regression and Lasso Regression, to predict car prices based on the given dataset. I evaluated the models' performance using two metrics: mean absolute error (MAE) and root mean squared error (RMSE).<br>
+
+For the Linear Regression model, I obtained an MAE of approximately 1.0726 lakhs and an RMSE of around 1.3110 lakhs. This suggests that, on average, my predicted car prices deviated from the actual prices by approximately 1.0726 and 1.3110 lakhs, respectively.<br>
+
+For the Lasso Regression model, I achieved a slightly improved performance with an MAE of approximately 1.0507 lakhs and an RMSE of around 1.3032 lakhs. These metrics indicate that the Lasso Regression model produced more accurate predictions with smaller deviations from the actual car prices compared to the Linear Regression model.<br>
+
+Based on these results, I can conclude that the Lasso Regression model outperformed the Linear Regression model in predicting car prices using the given dataset. The Lasso model demonstrated better accuracy and precision, as indicated by its lower MAE and RMSE values.<br>
+
+Overall, the regression models provide valuable insights into predicting car prices, and the Lasso Regression model can be considered as my preferable choice due to its improved performance in this specific analysis.<br>
+</div>
+
+
+
+
+</section>
+
+
+
+</section>
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div >
+
+  <footer class=" text-center text-lg-start text-white" style ="background-color: #023047;">
+    <!-- Grid container -->
+    
+   <div class = "d-flex justify-content-end" style ="padding:10px">
+   <a href ="newindex.html"><button class="btn btn-lg " style="background-color: #023047; color:antiquewhite">
+      Go Back to Mainpage
+    </button></a>
+
+</div>
+    
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      Tien Truong | Behavior Research | Machine Learning and Deep Learning
+      
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>

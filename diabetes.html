@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Predictive Modeling for Diabetes Risk Assessment: Harnessing Machine Learning for Timely Intervention </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+  <style>
+    .image {
+        max-width: 100%;
+        width: 600px; /* Adjust this value as per your requirement */
+        height: auto;
+    }
+
+    @media (max-width: 600px) { /* Adjust the max-width as per your requirements */
+    .navbar-brand img {
+      width: 340px;
+      height:60px
+    }
+  }
+
+   @media (max-width: 480px) { /* Adjust the max-width as needed */
+    video {
+      width: 320px; /* Set the width to 100% for smaller screens */
+      height: 170px; /* Allow the height to adjust proportionally */
+    }
+  }
+
+   .navbar{
+    --bs-navbar-padding-x: 0px!important;
+    --bs-navbar-padding-y: 0px!important;
+}
+</style>
+  <body>
+
+    <nav class="navbar bg-body-tertiary" >
+  <div class="container-fluid" style ="background-color :#023047; color:white; padding:20px">
+    <a class="navbar-brand" href="newindex.html">
+      <img src="logo20.png" alt="Logo" width="490" height="90" class="d-inline-block align-text-top" >
+      
+    </a>
+  </div>
+</nav>
+
+    <section class = "container" style ="margin-top: 20px;" >
+        <h2 style ="margin-bottom: 20px;"> Predictive Modeling for Diabetes Risk Assessment: Harnessing Machine Learning for Timely Intervention</h2>
+        <hr >
+        <h3 > Introduction </h3>
+        <p>
+<div style ="margin-bottom: 10px;">
+This project aims to develop a predictive model using machine learning techniques to accurately predict the presence or likelihood of diabetes in individuals. Diabetes is a chronic condition affecting a significant portion of the global population, and early detection plays a vital role in managing and preventing complications. By leveraging advanced machine learning algorithms and analysis of various health-related features, I aim to build a robust and accurate model that can assist in early identification and intervention for individuals at risk of developing diabetes. <br>
+</div>
+
+
+
+
+      
+
+<h3 style ="margin-top: 20px;"> Data Description</h3>
+<div style ="margin-bottom: 10px;">
+The dataset used in this project contains information about several medical features of individuals, as well as the diabetes outcome. Here is a description of the columns in the dataset:
+
+<ol>
+  <li>Pregnancies: Number of times pregnant</li>
+  <li>Glucose: Plasma glucose concentration in an oral glucose tolerance test</li>
+  <li>BloodPressure: Diastolic blood pressure (mm Hg)</li>
+  <li>SkinThickness: Triceps skinfold thickness (mm)</li>
+  <li>Insulin: 2-Hour serum insulin (mu U/ml)</li>
+  <li>BMI: Body mass index (weight in kg/(height in meters)^2)</li>
+  <li>DiabetesPedigreeFunction: Diabetes pedigree function (a function that represents the likelihood of diabetes based on family history)</li>
+  <li>Age: Age in years</li>
+  <li>Outcome: Diabetes outcome (0 for non-diabetic, 1 for diabetic)</li>
+</ol>
+</div>
+
+<h3 style ="margin-top: 20px;"> Project Steps </h3>
+<div style ="margin-bottom: 10px;">
+
+<ol>
+  <li>Data Preprocessing: Perform necessary data preprocessing steps such as handling missing values, handling categorical variables (if any), and scaling the features if required.</li>
+  <li>Exploratory Data Analysis (EDA): Conduct EDA to gain insights into the dataset. Analyze the distribution of each feature, identify any outliers, and explore relationships between features and the target variable. Visualize the data using plots and charts to better understand the patterns and correlations.</li>
+  <li>Data Split: Split the dataset into training and testing sets. The training set will be used to train the SVM model, while the testing set will be used to evaluate its performance on unseen data.</li>
+  <li>Model Selection: Choose the SVM algorithm as the classifier for the classification task. SVM is known for its effectiveness in handling both linear and non-linear classification problems.</li>
+  <li>Hyperparameter Tuning: Use techniques like GridSearchCV to find the best combination of hyperparameters for the SVM model. Experiment with parameters such as the choice of kernel (linear, radial basis function (RBF), polynomial, etc.), the regularization parameter (C), and any other relevant parameters specific to the SVM algorithm.</li>
+  <li>Model Training: Fit the SVM model with the training data using the optimized hyperparameters obtained from the previous step.</li>
+  <li>Model Evaluation: Evaluate the trained SVM model using the testing data. Calculate metrics such as accuracy, precision, recall, and F1-score to assess the model's performance. Additionally, consider generating a confusion matrix or ROC curve to gain deeper insights into the model's performance.</li>
+</ol>
+</div>
+
+    </section>
+
+
+<div class="container">
+    <h3 style ="margin-top: 20px;"> Exploratory Data Analysis</h3>
+    <img src="d1.png" style="max-width: 100%">
+    <div style ="margin-bottom: 10px;">
+
+Based on the box plot analysis, it can be observed that individuals with diabetes have a higher median BMI (Body Mass Index) value of 35 compared to individuals without diabetes, who have a median BMI value of 30. This indicates a potential association between higher BMI and the presence of diabetes.<br>
+
+</div>
+
+</div>
+
+<div class="container">
+    <img src="d2.png" style="max-width: 100%">
+    <div style ="margin-bottom: 10px;">
+Based on the scatter plot of BMI versus Age, it can be observed that individuals with diabetes tend to have a BMI ranging between 30 to 50 and are predominantly concentrated in the age group over 30. However, there doesn't appear to be a clear and distinct trend or pattern that allows for a conclusive differentiation between individuals with diabetes and those without diabetes based solely on BMI and age. Further analysis and exploration may be required to identify additional factors or variables that contribute to the classification of diabetes and non-diabetes individuals.<br>
+
+
+</div>
+<div class="container">
+    <img src="d3.png" style="max-width: 100%">
+    <div style ="margin-bottom: 10px;">
+The classification report provides an evaluation of the performance of a classification model based on metrics such as precision, recall, and F1-score. In this case, we have a binary classification task with two classes: 0 (non-diabetic) and 1 (diabetic).<br>
+
+The report indicates that for class 0 (non-diabetic), the precision is 0.84, indicating that 84% of the instances predicted as non-diabetic are indeed non-diabetic. The recall is 0.77, indicating that 77% of the actual non-diabetic instances are correctly identified as non-diabetic. The F1-score, which is the harmonic mean of precision and recall, is 0.81. The support refers to the number of instances in class 0, which is 137.<br>
+
+For class 1 (diabetic), the precision is 0.53, indicating that 53% of the instances predicted as diabetic are indeed diabetic. The recall is 0.64, indicating that 64% of the actual diabetic instances are correctly identified as diabetic. The F1-score for class 1 is 0.58. The support for class 1 is 55.<br>
+
+The overall accuracy of the model is 0.73, which means that it correctly predicts the outcome for 73% of the instances in the dataset. The macro average F1-score is 0.69, which represents the average F1-score across both classes, giving equal weight to each class. The weighted average F1-score, which takes into account the support for each class, is 0.74.<br>
+
+In summary, the model shows reasonably good performance in predicting the non-diabetic class, with high precision and relatively good recall. However, it has lower performance in predicting the diabetic class, with lower precision and moderate recall. Further analysis and fine-tuning of the model may be required to improve its performance, especially in detecting diabetic instances.<br>
+
+
+</div>
+
+
+
+
+</div>
+
+<section class = "container">
+
+
+
+
+<section class ="container" style ="background-color: antiquewhite; padding:10px; margin-bottom: 20px;">
+<div> 
+    <h5 style ="padding-top: 10px;"><b style ="border-bottom: 2px solid black;"> Conclusions </b></h5>
+<div style ="margin-bottom: 10px;">
+In conclusion, this project aimed to develop a machine learning model to predict the likelihood of an individual having diabetes based on various medical features. The dataset used in the project consisted of information such as pregnancies, glucose levels, blood pressure, skin thickness, insulin levels, BMI, diabetes pedigree function, age, and the diabetes outcome.<br>
+
+During the project, I performed data preprocessing, including handling missing values and exploring the distribution of the features. We split the dataset into training and testing sets and selected the Support Vector Machine (SVM) algorithm as the classifier for its effectiveness in handling both linear and non-linear classification problems.<br>
+
+Hyperparameter tuning was conducted using techniques like GridSearchCV to find the optimal combination of hyperparameters for the SVM model. The model was trained on the training data using the optimized hyperparameters and evaluated on the testing data. Performance metrics such as accuracy, precision, recall, and F1-score were calculated to assess the model's performance.<br>
+
+The results showed that the model achieved relatively good accuracy, with an overall accuracy of 73%. The precision and recall varied for each class, with class 0 (non-diabetic) showing higher precision (84%) and class 1 (diabetic) demonstrating higher recall (64%). The F1-score provided a balanced measure between precision and recall.<br>
+
+Based on the evaluation metrics, it is evident that the model performed better in predicting the non-diabetic class compared to the diabetic class. Further improvements could be made by exploring additional features, feature engineering techniques, or trying different classification algorithms to enhance the model's predictive capabilities.<br>
+
+Overall, this project demonstrates the application of machine learning techniques, specifically SVM, in predicting diabetes based on medical features. The findings contribute to the understanding of the relationship between various factors and the presence of diabetes. The model can be further refined and deployed in real-world scenarios to aid in early detection and management of diabetes, potentially leading to improved healthcare outcomes.<br>
+</div>
+
+
+
+
+</section>
+
+
+
+</section>
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div >
+
+  <footer class=" text-center text-lg-start text-white" style ="background-color: #023047;">
+    <!-- Grid container -->
+    
+   <div class = "d-flex justify-content-end" style ="padding:10px">
+   <a href ="newindex.html"><button class="btn btn-lg " style="background-color: #023047; color:antiquewhite">
+      Go Back to Mainpage
+    </button></a>
+
+</div>
+    
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      TTien Truong | Behavior Research | Machine Learning and Deep Learning
+      
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>

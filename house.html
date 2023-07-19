@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Predictive Modeling of California Housing Prices: A Comparative Analysis with XGBoost </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+  <style>
+    .image {
+        max-width: 100%;
+        width: 600px; /* Adjust this value as per your requirement */
+        height: auto;
+    }
+
+    @media (max-width: 600px) { /* Adjust the max-width as per your requirements */
+    .navbar-brand img {
+      width: 340px;
+      height:60px
+    }
+  }
+
+   @media (max-width: 480px) { /* Adjust the max-width as needed */
+    video {
+      width: 320px; /* Set the width to 100% for smaller screens */
+      height: 170px; /* Allow the height to adjust proportionally */
+    }
+  }
+
+   .navbar{
+    --bs-navbar-padding-x: 0px!important;
+    --bs-navbar-padding-y: 0px!important;
+}
+</style>
+  <body>
+
+    <nav class="navbar bg-body-tertiary" >
+  <div class="container-fluid" style ="background-color :#023047; color:white; padding:20px">
+    <a class="navbar-brand" href="newindex.html">
+      <img src="logo20.png" alt="Logo" width="490" height="90" class="d-inline-block align-text-top" >
+      
+    </a>
+  </div>
+</nav>
+
+    <section class = "container" style ="margin-top: 20px;" >
+        <h2 style ="margin-bottom: 20px;"> Predictive Modeling of California Housing Prices: A Comparative Analysis with XGBoost </h2>
+        <hr >
+        <h3 > Introduction </h3>
+        <p>
+<div style ="margin-bottom: 10px;">
+The aim of this project is to develop a machine learning model that predicts housing prices in California based on the California housing dataset. The dataset contains various features related to houses in different locations across California, such as median income, house age, average number of rooms and bedrooms, population, and geographical coordinates. <br>
+</div>
+
+
+
+
+      
+
+<h3 style ="margin-top: 20px;"> Data Description</h3>
+<div style ="margin-bottom: 10px;">
+The California housing dataset is a widely used dataset in the field of machine learning and regression analysis. It contains information about housing prices and various features associated with houses in different locations across California.<br>
+
+The dataset consists of a total of 20,640 instances or samples, each representing a specific block or area in California. Each instance is described by a set of eight features or attributes that capture different aspects of the housing market.
+
+The features present in the dataset are as follows:
+
+<ol>
+  <li>MedInc: Median income of the block.</li>
+  <li>HouseAge: Median age of the houses in the block.</li>
+  <li>AveRooms: Average number of rooms per dwelling.</li>
+  <li>AveBedrms: Average number of bedrooms per dwelling.</li>
+  <li>Population: Total population in the block.</li>
+  <li>AveOccup: Average number of occupants per dwelling.</li>
+  <li>Latitude: Latitude coordinate of the block.</li>
+  <li>Longitude: Longitude coordinate of the block.</li>
+</ol>
+</div>
+
+<h3 style ="margin-top: 20px;"> Project Steps </h3>
+<div style ="margin-bottom: 10px;">
+
+<ul>
+  <li><strong>Data Exploration:</strong> I will perform an exploratory analysis of the California housing dataset to understand its structure, feature distributions, and potential relationships between the features and the target variable, which is the median house value. This step will help me gain insights into the data and identify any patterns or anomalies.</li>
+  <li><strong>Data Preprocessing:</strong> This step involves cleaning and preparing the dataset for model training. I will handle missing values, outliers, and potentially perform feature scaling or normalization to ensure that all features are on a similar scale. I will also encode any categorical variables and handle any other data-specific preprocessing requirements.</li>
+  <li><strong>Feature Selection and Engineering:</strong> I will analyze the importance and relevance of the features in predicting housing prices. This may involve feature selection techniques to identify the most influential features and potentially creating new features by combining or transforming existing ones to capture additional information.</li>
+  <li><strong>Model Training and Evaluation:</strong> I will train a machine learning model using the preprocessed data. The specific model chosen will be XGBoost, a powerful algorithm known for its performance in regression tasks. I will tune the hyperparameters of the model using techniques like cross-validation and grid search to optimize its performance. The trained model will be evaluated using appropriate regression evaluation metrics such as mean squared error (MSE), mean absolute error (MAE), and R-squared.</li>
+  <li><strong>Model Interpretation and Insights:</strong> I will analyze the trained model to understand the significance of each feature in predicting housing prices. This analysis will provide insights into the factors that most strongly influence housing prices in California, allowing stakeholders to gain a deeper understanding of the market dynamics.</li>
+</ul>
+</div>
+
+    </section>
+
+    <div class = "container">
+     <h3 style ="margin-top: 20px;"> Features Correlation </h3>
+   
+    <img src="house3.png" style="max-width: 100%">
+     <div style ="margin-bottom: 10px;">
+    Analyzing the correlations, we can observe the following insights:
+
+
+    <ul>
+  <li><strong>Median Income (MedInc):</strong> shows a relatively strong positive correlation (0.688) with the Price. This suggests that higher median income tends to be associated with higher housing prices.</li>
+  <li><strong>House Age (HouseAge):</strong> has a weak positive correlation (0.106) with the Price. This indicates that, to some extent, older houses may have slightly higher prices.</li>
+  <li><strong>Average Number of Rooms (AveRooms):</strong> exhibits a moderate positive correlation (0.152) with the Price. This implies that houses with more rooms tend to have higher prices.</li>
+  <li><strong>Average Number of Bedrooms (AveBedrms):</strong> has a weak negative correlation (-0.047) with the Price. This suggests that an increase in the number of bedrooms is associated with a slight decrease in housing prices.</li>
+  <li><strong>Population and Average Occupancy (Population, AveOccup):</strong> show weak correlations (both positive and negative) with the Price. These features have minimal influence on housing prices.</li>
+  <li><strong>Latitude and Longitude:</strong> exhibit weak correlations with the Price (-0.144 and -0.046, respectively). These geographic coordinates have a slight negative influence on housing prices, indicating that certain areas may have slightly lower prices.</li>
+</ul>
+    
+    </div>
+
+
+
+    </div>
+
+<div class="container">
+         <h3 style ="margin-top: 20px; margin-top: 10px;"> Root Mean Squared Error and Mean Absolute Error </h3>
+
+    <img src="house2.png" style="max-width: 100%; margin-top: 10px;">
+    <div style ="margin-bottom: 10px;">
+The analysis of the model's performance reveals that it achieves a root mean squared error (RMSE) of 0.4827 and a mean absolute error (MAE) of 0.3110 when predicting housing prices. The RMSE indicates the average magnitude of the differences between the predicted and actual housing prices, with a lower value suggesting better accuracy. Similarly, the MAE represents the average absolute difference between the predicted and actual values, providing an estimate of the model's overall error.Considering these metrics, the model appears to perform reasonably well in predicting housing prices in the given context.
+</div>
+
+</div>
+
+
+
+<section class = "container">
+
+
+
+
+<section class ="container" style ="background-color: antiquewhite; padding:10px; margin-bottom: 20px;">
+<div> 
+    <h5 style ="padding-top: 10px;"><b style ="border-bottom: 2px solid black;"> Conclusions </b></h5>
+<div style ="margin-bottom: 10px;">
+In conclusion, this project aimed to develop a machine learning model using the XGBoost algorithm to predict housing prices in California. Through data exploration, preprocessing, feature engineering, model training, and evaluation, we successfully built a model that achieves a reasonably low root mean squared error (RMSE) and mean absolute error (MAE) when predicting housing prices.<br>
+
+The XGBoost model demonstrated its effectiveness in capturing the complex relationships between the features and the target variable, allowing for accurate price predictions. The model's performance indicates its potential applicability in assisting various stakeholders, including real estate professionals, policymakers, and potential homebuyers, in understanding and forecasting housing prices in California.<br>
+
+However, it is important to note that further analysis and evaluation can be conducted to enhance the model's performance and gain deeper insights into the factors driving housing prices. This may involve considering additional features, incorporating domain knowledge, and comparing the model's performance against other regression techniques.<br>
+</div>
+
+
+
+
+</section>
+
+
+
+</section>
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div >
+
+  <footer class=" text-center text-lg-start text-white" style ="background-color: #023047;">
+    <!-- Grid container -->
+    
+   <div class = "d-flex justify-content-end" style ="padding:10px">
+   <a href ="newindex.html"><button class="btn btn-lg " style="background-color: #023047; color:antiquewhite">
+      Go Back to Mainpage
+    </button></a>
+
+</div>
+    
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      Tien Truong | Behavior Research | Machine Learning and Deep Learning
+      
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>
